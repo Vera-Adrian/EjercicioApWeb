@@ -1,0 +1,40 @@
+# Factura de Compra en PHP
+
+Aplicación web sencilla en PHP que genera la factura de compra de un artículo
+a partir de la descripción, cantidad y precio unitario ingresados por el usuario.
+
+## Requisitos
+
+- PHP 7.0 o superior
+- Servidor web (Apache, Nginx) o el servidor embebido de PHP
+
+## Uso
+
+1. Ingresa la descripción del artículo.
+2. Introduce la cantidad adquirida y el precio unitario.
+3. Presiona **Emitir Factura**.
+4. El sistema muestra el desglose completo:
+   - Subtotal (cantidad × precio)
+   - IVA (12% sobre el subtotal)
+   - Total con IVA
+   - Descuento (si aplica)
+   - Total neto a pagar
+
+## Reglas de cálculo
+
+- **IVA:** 12% sobre el subtotal.
+- **Descuento:** 15% sobre el total con IVA, solo si este supera los 150 $.
+- **Total neto:** Total con IVA − descuento (si aplica).
+
+## Fórmulas
+
+- Subtotal = cantidad × precio unitario
+- IVA = subtotal × 0.12
+- Total con IVA = subtotal + IVA
+- Descuento = Total con IVA × 0.15 (si Total con IVA > 150)
+- Total neto = Total con IVA − Descuento
+
+## Archivos
+
+- `index.php`: formulario y lógica de facturación.
+- `README.md`: descripción del funcionamiento.
